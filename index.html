@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>دیاکو — مهندسیِ بی‌صدا</title>
+<meta name="description" content="لپ‌تاپ‌های دیاکو؛ ساخته‌شده برای کسانی که سکوت را با قدرت اشتباه نمی‌گیرند.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-mark"></div>
+  <div class="pl-bar"><div class="pl-bar-fill" id="plBarFill"></div></div>
+  <div class="pl-pct mono" id="plPct">در حال آماده‌سازی — ۰٪</div>
+</div>
+
+<div class="grain"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<nav class="side-dots" id="sideDots">
+  <button data-target="#top" data-label="آغاز" class="active"></button>
+  <button data-target="#story" data-label="داستان"></button>
+  <button data-target="#models" data-label="مدل‌ها"></button>
+  <button data-target="#specs" data-label="مشخصات"></button>
+  <button data-target="#configurator" data-label="پیکربندی"></button>
+  <button data-target="#compare" data-label="مقایسه"></button>
+  <button data-target="#voices" data-label="نظرات"></button>
+</nav>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark"></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#story">چرا دیاکو</a>
+      <a href="#models">مدل‌ها</a>
+      <a href="#specs">مشخصات</a>
+      <a href="#compare">مقایسه</a>
+      <a href="#voices">نظرات</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#compare" class="btn btn-ghost">مقایسه مدل‌ها</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div id="hero-canvas">
+    <canvas class="hero-particles" id="particleCanvas"></canvas>
+
+    <div class="hero-eyebrow">مهندسیِ بی‌صدا — نسل هفتم</div>
+    <div class="hero-title">
+      <h1>
+        <span class="line"><span>قدرتی که</span></span>
+        <span class="line"><span class="accent">صدایش را نمی‌شنوید</span></span>
+      </h1>
+    </div>
+    <p class="hero-sub">دیاکو از دل کارگاه‌های فلزکاری اصفهان تا آزمایشگاه‌های پردازش موازی، برای کسانی ساخته شده که کارشان، سکوت دستگاه را طلب می‌کند.</p>
+    <div class="hero-cta-row">
+      <a href="#models" class="btn btn-primary">مشاهدهٔ مدل‌ها</a>
+      <a href="#story" class="btn btn-ghost">داستان دیاکو</a>
+    </div>
+
+    <div class="stage">
+      <div class="laptop" id="laptop3d">
+        <div class="lid" id="lidEl">
+          <div class="lid-back"><div class="logo"></div></div>
+          <div class="screen-face">
+            <div class="screen-inner">
+              <div class="screen-glow" id="screenGlow"></div>
+              <div class="screen-ui" id="screenUI">
+                <div class="os-mark"></div>
+                <div class="os-text">D I A K O &nbsp; O S</div>
+              </div>
+              <div class="screen-scanline"></div>
+            </div>
+          </div>
+        </div>
+        <div class="base">
+          <div class="keyboard"></div>
+          <div class="trackpad"></div>
+        </div>
+        <div class="laptop-shadow"></div>
+      </div>
+
+      <div class="spec-badge sb-1" data-side="right"><span class="dot"></span><span class="val">۴nm</span><span class="lbl">پردازندهٔ سیمین</span><span class="line"></span></div>
+      <div class="spec-badge sb-2" data-side="left"><span class="dot"></span><span class="val">۳۲GB</span><span class="lbl">رم LPDDR5X</span><span class="line"></span></div>
+      <div class="spec-badge sb-3" data-side="right"><span class="dot"></span><span class="val">۲۸h</span><span class="lbl">استقلال باتری</span><span class="line"></span></div>
+      <div class="spec-badge sb-4" data-side="left"><span class="dot"></span><span class="val">۳K</span><span class="lbl">نمایشگر OLED</span><span class="line"></span></div>
+      <div class="spec-badge sb-5" data-side="right"><span class="dot"></span><span class="val">۱.۱kg</span><span class="lbl">بدنهٔ تیتانیوم</span><span class="line"></span></div>
+    </div>
+
+    <div class="hero-scroll-hint"><span>SCROLL</span><span class="stick"></span></div>
+  </div>
+</section>
+
+<!-- ============================== STORY ============================== -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="eyebrow reveal">فلسفهٔ ساخت</div>
+    <h2 class="section-title reveal">هر دیاکو، پیش از آن‌که یک قطعهٔ الکترونیک باشد، یک تصمیم طراحی است.</h2>
+
+    <div class="story-grid">
+      <div class="story-visual reveal">
+        <canvas id="storyCanvas"></canvas>
+        <span class="tag">رندر زنده — بدنهٔ CNC</span>
+      </div>
+      <div class="story-copy reveal">
+        <p>نام دیاکو از نخستین پادشاه مادها گرفته شده؛ کسی که به‌جای فتح با شمشیر، با <strong>نظم و مهندسی</strong> حکومتی ساخت که سال‌ها دوام آورد. ما همین ایده را در تولید سخت‌افزار دنبال می‌کنیم: به‌جای رقابت بر سر جلوه‌های زودگذر، روی چیزی سرمایه‌گذاری می‌کنیم که در سال دهم استفاده هم بی‌نقص کار کند.</p>
+        <p>بدنهٔ هر دستگاه از یک بلوک تیتانیوم توسط دستگاه‌های CNC پنج‌محوره تراشیده می‌شود؛ فرآیندی که <strong>۹ ساعت</strong> طول می‌کشد تا فقط قاب یک لپ‌تاپ شکل بگیرد. نتیجه، بدنه‌ای‌ست که خم نمی‌شود، داغ نمی‌کند و صدای فن را به حداقل می‌رساند.</p>
+        <div class="story-stats">
+          <div class="stat"><b class="mono">۹h</b><span>زمان تراش هر بدنه</span></div>
+          <div class="stat"><b class="mono">۲۱</b><span>مرحلهٔ کنترل کیفی</span></div>
+          <div class="stat"><b class="mono">۷</b><span>سال گارانتی بدنه</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== MODELS ============================== -->
+<section class="models" id="models">
+  <div class="wrap">
+    <div class="models-head">
+      <div>
+        <div class="eyebrow reveal">مدل‌های موجود</div>
+        <h2 class="section-title reveal">سه دستگاه، سه سبک کار.</h2>
+      </div>
+      <p class="section-lead reveal" style="margin-top:0;">از سبک‌ترین بدنهٔ سفری دیاکو تا قدرتمندترین ایستگاه پردازش گرافیکی؛ هرکدام برای یک نوع کار طراحی شده، نه برای همهٔ کارها.</p>
+    </div>
+
+    <div class="model-cards">
+
+      <div class="model-card reveal" data-tilt>
+        <div class="model-tag">برای سفر و نوشتن</div>
+        <h3>دیاکو سیمین</h3>
+        <p class="desc">۱.۱ کیلوگرم، بدنهٔ تیتانیوم روشن، ۲۸ ساعت باتری. برای کسی که لپ‌تاپش را بیشتر از کیفش بیرون می‌آورد.</p>
+        <div class="model-visual" data-mini-laptop style="--mcolor:#2CC6C0">
+          <div class="mini-stage">
+            <div class="mini-laptop">
+              <div class="mini-lid" data-mini-lid>
+                <div class="mini-lid-back"><span class="dotmark"></span></div>
+                <div class="mini-screen"><div class="mini-screen-inner"><div class="glow"></div></div></div>
+              </div>
+              <div class="mini-base"><div class="kb"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="swatches">
+          <span class="lbl-txt">رنگ:</span>
+          <span class="swatch active" data-color="#C9CDD3" style="background:#C9CDD3"></span>
+          <span class="swatch" data-color="#2CC6C0" style="background:#2CC6C0"></span>
+          <span class="swatch" data-color="#3a3d43" style="background:#3a3d43"></span>
+        </div>
+        <ul class="model-specs">
+          <li>پردازنده <b>D-Core 8</b></li>
+          <li>حافظه <b>۱۶ تا ۳۲GB</b></li>
+          <li>نمایشگر <b>۱۳.۶" OLED</b></li>
+          <li>وزن <b>۱.۱kg</b></li>
+        </ul>
+        <div class="model-price"><span class="amount">۶۹,۰۰۰,۰۰۰ <small>تومان</small></span></div>
+        <a href="#compare" class="btn btn-ghost">مشاهدهٔ کامل مشخصات</a>
+      </div>
+
+      <div class="model-card featured reveal" data-tilt>
+        <div class="model-tag">پرفروش‌ترین</div>
+        <h3>دیاکو ویرا</h3>
+        <p class="desc">توازنی دقیق میان قدرت و تحرک؛ برای طراحان، برنامه‌نویسان و تدوین‌گرانی که هم سرعت می‌خواهند هم سکوت.</p>
+        <div class="model-visual" data-mini-laptop style="--mcolor:#2CC6C0">
+          <div class="mini-stage">
+            <div class="mini-laptop">
+              <div class="mini-lid" data-mini-lid>
+                <div class="mini-lid-back"><span class="dotmark"></span></div>
+                <div class="mini-screen"><div class="mini-screen-inner"><div class="glow"></div></div></div>
+              </div>
+              <div class="mini-base"><div class="kb"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="swatches">
+          <span class="lbl-txt">رنگ:</span>
+          <span class="swatch active" data-color="#2CC6C0" style="background:#2CC6C0"></span>
+          <span class="swatch" data-color="#D8B26A" style="background:#D8B26A"></span>
+          <span class="swatch" data-color="#101215" style="background:#101215;border:1px solid #333"></span>
+        </div>
+        <ul class="model-specs">
+          <li>پردازنده <b>D-Core 12 Pro</b></li>
+          <li>حافظه <b>۳۲ تا ۶۴GB</b></li>
+          <li>نمایشگر <b>۱۶" ۳K OLED 120Hz</b></li>
+          <li>وزن <b>۱.۶kg</b></li>
+        </ul>
+        <div class="model-price"><span class="amount">۹۸,۰۰۰,۰۰۰ <small>تومان</small></span></div>
+        <a href="#compare" class="btn btn-primary">مشاهدهٔ کامل مشخصات</a>
+      </div>
+
+      <div class="model-card reveal" data-tilt>
+        <div class="model-tag">برای رندر و بازی</div>
+        <h3>دیاکو آریا</h3>
+        <p class="desc">با گرافیک اختصاصی و سیستم خنک‌کنندهٔ مسی دوگانه، سنگین‌ترین پروژه‌های سه‌بعدی را بی‌درنگ پردازش می‌کند.</p>
+        <div class="model-visual" data-mini-laptop style="--mcolor:#D8B26A">
+          <div class="mini-stage">
+            <div class="mini-laptop">
+              <div class="mini-lid" data-mini-lid>
+                <div class="mini-lid-back"><span class="dotmark"></span></div>
+                <div class="mini-screen"><div class="mini-screen-inner"><div class="glow"></div></div></div>
+              </div>
+              <div class="mini-base"><div class="kb"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="swatches">
+          <span class="lbl-txt">رنگ:</span>
+          <span class="swatch active" data-color="#101215" style="background:#101215;border:1px solid #333"></span>
+          <span class="swatch" data-color="#D8B26A" style="background:#D8B26A"></span>
+          <span class="swatch" data-color="#7c2f2f" style="background:#7c2f2f"></span>
+        </div>
+        <ul class="model-specs">
+          <li>پردازنده <b>D-Core 16 Ultra</b></li>
+          <li>گرافیک <b>RTX-class ۱۶GB</b></li>
+          <li>نمایشگر <b>۱۸" ۴K Mini-LED</b></li>
+          <li>وزن <b>۲.۴kg</b></li>
+        </ul>
+        <div class="model-price"><span class="amount">۱۵۴,۰۰۰,۰۰۰ <small>تومان</small></span></div>
+        <a href="#compare" class="btn btn-ghost">مشاهدهٔ کامل مشخصات</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SPEC DEEP DIVE ============================== -->
+<section class="deep" id="specs">
+  <div class="wrap">
+    <div class="eyebrow reveal">در دل دستگاه</div>
+    <h2 class="section-title reveal">عددهایی که واقعاً حس می‌شوند، نه فقط روی برگهٔ مشخصات.</h2>
+
+    <div class="deep-grid">
+      <div class="deep-cell has-ring reveal"><div class="ring" data-ring="98"></div><div class="num" data-count="98"><span class="count">0</span><sup>%</sup></div><div class="lbl">نسبت صفحه به بدنه در سری ویرا</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="0.4"><span class="count">0</span><sup>mm</sup></div><div class="lbl">دقت تراش CNC بدنهٔ تیتانیوم</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="17"><span class="count">0</span><sup>dB</sup></div><div class="lbl">صدای فن در بار کاری معمول</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="1200"><span class="count">0</span><sup>nit</sup></div><div class="lbl">حداکثر روشنایی نمایشگر OLED</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="0"><span class="count">0</span><sup>ms</sup></div><div class="lbl">بیدارشدن از خواب با درپوش مغناطیسی</div></div>
+      <div class="deep-cell has-ring reveal"><div class="ring" data-ring="99.9"></div><div class="num" data-count="99.9"><span class="count">0</span><sup>%</sup></div><div class="lbl">دقت رنگ Adobe RGB برای طراحان</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="45"><span class="count">0</span><sup>min</sup></div><div class="lbl">زمان شارژ سریع تا ۸۰٪</div></div>
+      <div class="deep-cell reveal"><div class="num" data-count="7"><span class="count">0</span><sup>yr</sup></div><div class="lbl">گارانتی بدنه در برابر تاب‌خوردگی</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GALLERY ============================== -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="eyebrow reveal">جزئیاتی که دیده نمی‌شوند، اما لمس می‌شوند</div>
+    <h2 class="section-title reveal">نمای نزدیک از ساختار دیاکو</h2>
+  </div>
+
+  <div class="gallery-track-wrap wrap">
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۱</span><h4>لولای فولادی دوطرفه</h4><p>باز و بسته می‌شود تا ۳۰,۰۰۰ بار بدون کوچک‌ترین شل‌شدگی؛ آزموده‌شده در چرخهٔ چهارساله.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۲</span><h4>صفحه‌کلید نورپردازی تطبیقی</h4><p>نور پس‌زمینه بسته به نور محیط، به‌صورت نرم و بی‌صدا خودش را تنظیم می‌کند.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۳</span><h4>خنک‌کنندهٔ بخار مسی</h4><p>دو فن آیرودینامیک و محفظهٔ بخار مسی، حرارت را پیش از رسیدن به دست شما خارج می‌کنند.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۴</span><h4>درگاه‌های کامل</h4><p>دو Thunderbolt، یک HDMI ۲.۱ و کارت‌خوان SD؛ بدون نیاز به مبدل روی میز کارتان.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۵</span><h4>تاچ‌پد شیشهٔ نوری</h4><p>سطحی از شیشهٔ آنتی‌رفلکس با دقت لمسی که فشار دست را هم تشخیص می‌دهد.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۶</span><h4>باتری سلول بلند</h4><p>چیدمان عمودی سلول‌ها، ظرفیت را ۱۸٪ نسبت به طرح‌های رایج افزایش می‌دهد.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۷</span><h4>درپوش مغناطیسی هوشمند</h4><p>با بازکردن درِ دستگاه، سیستم در کمتر از یک چشم‌به‌هم‌زدن از خواب بیدار می‌شود.</p></div>
+      <div class="gcard"><div class="glow"></div><span class="idx">۰۸</span><h4>بلندگوهای شش‌کاناله</h4><p>چیدمان صدای فضایی با دو ووفر پنهان در لولا، برای جلسات و تماشای فیلم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COMPARE ============================== -->
+<section class="compare" id="compare">
+  <div class="wrap">
+    <div class="eyebrow reveal">تصمیم‌گیری آسان</div>
+    <h2 class="section-title reveal">مدل مناسب خودتان را در یک نگاه پیدا کنید</h2>
+
+    <div class="compare-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>ویژگی</th>
+            <th>سیمین</th>
+            <th>ویرا</th>
+            <th>آریا</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>پردازنده</td><td>D-Core 8</td><td><b>D-Core 12 Pro</b></td><td><b>D-Core 16 Ultra</b></td></tr>
+          <tr><td>حافظهٔ رم</td><td>تا ۳۲GB</td><td>تا ۶۴GB</td><td>تا ۶۴GB</td></tr>
+          <tr><td>حافظهٔ ذخیره‌سازی</td><td>تا ۱TB</td><td>تا ۲TB</td><td>تا ۴TB</td></tr>
+          <tr><td>نمایشگر</td><td>۱۳.۶" OLED</td><td>۱۶" ۳K 120Hz</td><td>۱۸" ۴K Mini-LED</td></tr>
+          <tr><td>گرافیک اختصاصی</td><td>—</td><td>اختیاری</td><td><b>استاندارد</b></td></tr>
+          <tr><td>وزن</td><td><b>۱.۱kg</b></td><td>۱.۶kg</td><td>۲.۴kg</td></tr>
+          <tr><td>استقلال باتری</td><td><b>۲۸h</b></td><td>۱۹h</td><td>۱۱h</td></tr>
+          <tr><td>قیمت پایه</td><td>۶۹,۰۰۰,۰۰۰</td><td>۹۸,۰۰۰,۰۰۰</td><td>۱۵۴,۰۰۰,۰۰۰</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VOICES ============================== -->
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="eyebrow reveal">از زبان کاربران</div>
+    <h2 class="section-title reveal">کسانی که هر روز با دیاکو کار می‌کنند</h2>
+
+    <div class="voice-grid">
+      <div class="voice-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>«بعد از هشت ماه استفادهٔ روزانه برای تدوین، هنوز صدای فن را در جلسات کسی نشنیده. این برایم از هر بنچمارکی مهم‌تر بود.»</p>
+        <div class="voice-person"><span class="av"></span><div><b>سارا مرادی</b><span>تدوین‌گر ویدیو</span></div></div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>«وزن سیمین باعث شد بالاخره کوله‌پشتی‌ام سبک‌تر شود. برای سفرهای کاری هفتگی، دقیقاً همین را می‌خواستم.»</p>
+        <div class="voice-person"><span class="av"></span><div><b>آرمین کاظمی</b><span>مشاور محصول</span></div></div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>«رندر پروژه‌های سه‌بعدی که روی سیستم قبلی‌ام ۴۰ دقیقه طول می‌کشید، الان زیر ۱۲ دقیقه تمام می‌شود.»</p>
+        <div class="voice-person"><span class="av"></span><div><b>نگار شریفی</b><span>طراح صنعتی</span></div></div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>«بعد از دو سال کار روزانه، هنوز لولاهایش شل نشده و بدنه هیچ خط و خشی نگرفته. برای اولین‌بار حس می‌کنم لپ‌تاپم زودتر از من فرسوده نمی‌شود.»</p>
+        <div class="voice-person"><span class="av"></span><div><b>رضا امینی</b><span>توسعه‌دهندهٔ نرم‌افزار</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONFIGURATOR ============================== -->
+<section class="configurator" id="configurator">
+  <div class="wrap">
+    <div class="eyebrow reveal">پیکربندی دستگاه شما</div>
+    <h2 class="section-title reveal">دیاکو ویرا را دقیقاً مطابق نیازتان بچینید</h2>
+
+    <div class="config-box reveal">
+      <div class="config-visual">
+        <div class="mini-stage cv-laptop">
+          <div class="mini-laptop" style="width:100%">
+            <div class="mini-lid" data-mini-lid data-config-lid>
+              <div class="mini-lid-back"><span class="dotmark"></span></div>
+              <div class="mini-screen"><div class="mini-screen-inner"><div class="glow" id="configGlow"></div></div></div>
+            </div>
+            <div class="mini-base"><div class="kb"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="config-panel">
+        <div class="config-row">
+          <div class="row-label"><span>حافظهٔ رم</span><b id="ramLabel">۳۲GB</b></div>
+          <div class="chip-set" data-group="ram">
+            <span class="chip active" data-price="0">۳۲GB</span>
+            <span class="chip" data-price="9000000">۴۸GB</span>
+            <span class="chip" data-price="15000000">۶۴GB</span>
+          </div>
+        </div>
+        <div class="config-row">
+          <div class="row-label"><span>حافظهٔ ذخیره‌سازی</span><b id="storageLabel">۵۱۲GB</b></div>
+          <div class="chip-set" data-group="storage">
+            <span class="chip active" data-price="0">۵۱۲GB</span>
+            <span class="chip" data-price="6000000">۱TB</span>
+            <span class="chip" data-price="13000000">۲TB</span>
+          </div>
+        </div>
+        <div class="config-row">
+          <div class="row-label"><span>رنگ بدنه</span><b id="colorLabel">فیروزه‌ای</b></div>
+          <div class="chip-set" data-group="color">
+            <span class="chip active" data-price="0" data-hex="#2CC6C0">فیروزه‌ای</span>
+            <span class="chip" data-price="0" data-hex="#D8B26A">برنزی</span>
+            <span class="chip" data-price="0" data-hex="#101215">مشکی</span>
+          </div>
+        </div>
+        <div class="config-total">
+          <span class="t-label">قیمت نهایی</span>
+          <span class="t-amount mono" id="configTotal">۹۸,۰۰۰,۰۰۰ تومان</span>
+        </div>
+        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:22px;">افزودن به سبد خرید</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">پرسش‌های پرتکرار</div>
+    <h2 class="section-title reveal">قبل از خرید، اینها را بخوانید</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>گارانتی دیاکو چه چیزهایی را پوشش می‌دهد؟</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>هفت سال گارانتی بدنه در برابر تاب‌خوردگی و دو سال گارانتی کامل قطعات، شامل تعویض رایگان باتری در صورت افت ظرفیت زیر ۸۰٪.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>آیا امکان ارتقای رم یا حافظه بعد از خرید هست؟</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>حافظهٔ ذخیره‌سازی در تمام مدل‌ها قابل تعویض است؛ رم در سری آریا قابل ارتقا و در سری‌های سیمین و ویرا برای کاهش وزن و افزایش سرعت، یکپارچه با برد اصلی است.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>زمان تحویل بعد از ثبت سفارش چقدر است؟</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>مدل‌های موجود در انبار ظرف ۲ تا ۴ روز کاری ارسال می‌شوند. سفارش‌های رنگ یا پیکربندی خاص، ۱۰ تا ۱۴ روز کاری زمان می‌برد.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>آیا امکان تست دستگاه پیش از خرید وجود دارد؟</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>بله، در نمایندگی‌های مجاز دیاکو در تهران، اصفهان و شیراز می‌توانید هر سه مدل را از نزدیک امتحان کنید.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section>
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>پیش از عرضهٔ عمومی، دیاکو را امتحان کنید</h2>
+      <p>ایمیل‌تان را بگذارید تا زمان باز شدن پیش‌فروش سری بعدی و یک کد تخفیف ویژه برایتان بفرستیم.</p>
+      <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('input').value='ثبت شد ✓';">
+        <input type="email" required placeholder="ایمیل شما">
+        <button class="btn btn-primary" type="submit">ثبت‌نام</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="mark"></span>دیاکو</a>
+        <p style="margin-top:16px;color:var(--ink-dim);font-size:13.5px;line-height:1.9;max-width:260px;">لپ‌تاپ‌هایی طراحی و مهندسی‌شده برای دوام، سکوت و کارِ جدی.</p>
+      </div>
+      <div>
+        <h5>محصولات</h5>
+        <ul><li><a href="#models">دیاکو سیمین</a></li><li><a href="#models">دیاکو ویرا</a></li><li><a href="#models">دیاکو آریا</a></li></ul>
+      </div>
+      <div>
+        <h5>پشتیبانی</h5>
+        <ul><li><a href="#">گارانتی و خدمات</a></li><li><a href="#">مراکز مجاز</a></li><li><a href="#">راهنمای خرید</a></li></ul>
+      </div>
+      <div>
+        <h5>شرکت</h5>
+        <ul><li><a href="#story">دربارهٔ ما</a></li><li><a href="#">فرصت‌های شغلی</a></li><li><a href="#">تماس با ما</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 1405 دیاکو. تمامی حقوق محفوظ است.</span>
+      <span>ساخته‌شده با دقت در ایران</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backTop" aria-label="بازگشت به بالا">↑</button>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
