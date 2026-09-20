@@ -223,7 +223,7 @@ Yes. The hero stage uses Three.js. An older browser without WebGL will lose that
 
 ### Is this the same as Business Website?
 
-No. [Business Website](https://github.com/sadra-hatami/Business-Website) is a multi-page company template. This repository is a cinematic single-page electronics store.
+No. [Business Website](https://github.com/sadra-hatami/Business-Website) is a multi-page company template. This repository is a cinematic electronics store.
 
 ---
 
