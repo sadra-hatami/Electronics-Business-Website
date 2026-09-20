@@ -68,7 +68,7 @@ The page is RTL and built for Persian readers, but the main work is visual: a pr
 
 Libraries are loaded from CDN. There is no backend and no build step.
 
-> **Tagline:** *A cinematic single-page Persian electronics store with scroll-driven motion, a 3D laptop that opens as you scroll, and a live product configurator.*
+> **Tagline:** *A cinematic Persian electronics store with scroll-driven motion, a 3D laptop that opens as you scroll, and a live product configurator.*
 
 ---
 
