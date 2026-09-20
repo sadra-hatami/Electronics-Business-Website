@@ -5,7 +5,7 @@
 
 ### A Cinematic Electronics Store Experience
 
-A high-end Persian landing page with **scroll-driven motion**, a **3D laptop that opens as you scroll**, a **live product configurator**, and a polished interface built with HTML, CSS, GSAP, and Three.js.
+A high-end Persian store website with **scroll-driven motion**, a **3D laptop that opens as you scroll**, a **live product configurator**, and a polished interface built with HTML, CSS, GSAP, and Three.js.
 
 <br>
 
@@ -62,27 +62,27 @@ A high-end Persian landing page with **scroll-driven motion**, a **3D laptop tha
 
 # 📖 About
 
-**Electronics Business Website** is a single-page electronics store interface designed to feel closer to a product film than a static catalog.
+**Electronics Business Website** is a Persian electronics store interface designed to feel closer to a product film than a static catalog.
 
-The page is RTL and built for Persian readers, but the main work is visual: a preloader, a custom cursor, a scroll-progress rail, side-dot navigation, a 3D laptop stage, and a configurator that updates the total as options change.
+The main work is visual: a preloader, a custom cursor, a scroll-progress rail, stage navigation, a 3D laptop, and a configurator that updates the total as options change.
 
 Libraries are loaded from CDN. There is no backend and no build step.
 
-> **Tagline:** *A cinematic Persian electronics store with scroll-driven motion, a 3D laptop that opens as you scroll, and a live product configurator.*
+> **Tagline:** *A cinematic Persian electronics store website with scroll-driven motion, a 3D product preview, and a live configurator.*
 
 ---
 
 # 🚀 Why This Website?
 
-A product page can list specs, or it can make the product move.
+A store page can list specs, or it can make the product move.
 
 This project focuses on the second path:
 
 - Motion is tied to scroll, not only to click
 - The laptop lid opens as the visitor moves down the hero
-- Navigation stays on screen without covering the stage
+- Navigation stays available without covering the stage
 - The configurator lets someone assemble a machine and see the price change
-- The layout stays one page, so the story never leaves the screen
+- The interface stays cinematic from the first frame to the last section
 
 ---
 
@@ -90,7 +90,7 @@ This project focuses on the second path:
 
 - 🎬 Full-page preloader with a live percent bar
 - 🖱️ Custom cursor and a light film-grain overlay
-- 📍 Side-dot navigation between page stages
+- 📍 Stage navigation between sections
 - 📊 Top scroll-progress line
 - 💻 3D laptop preview with a lid that opens on scroll
 - ✨ Screen glow and particle canvas around the hero
@@ -99,7 +99,7 @@ This project focuses on the second path:
 - 💰 Running total that updates with each option
 - 🔝 Back-to-top control
 - 🇮🇷 RTL layout and Persian UI
-- 📱 Responsive single-page structure
+- 📱 Responsive interface
 
 ---
 
@@ -109,9 +109,9 @@ This project focuses on the second path:
 
 The hero is not a still photo. As the page scrolls, the laptop lid lifts, the screen becomes the focus, and the scene feels like a product reveal.
 
-### Stage, not a form
+### Product stages
 
-The interface is built as a sequence of stages: opening, models, specs, comparison, and configuration. Side dots jump between those stages without breaking the motion.
+The interface moves through opening, models, specs, comparison, and configuration. Navigation jumps between those stages without breaking the motion.
 
 ### Configurator
 
@@ -182,7 +182,7 @@ A local server is the safer way to load `css/` and `js/` paths.
 
 - Front-end developers studying scroll-driven UI
 - Designers looking at cinematic product pages
-- Stores that want a single-page electronics showcase
+- Stores that want an electronics showcase
 - Students learning GSAP and Three.js together
 
 ---
@@ -200,7 +200,7 @@ Repository: https://github.com/sadra-hatami/Electronics-Business-Website
 Possible later improvements:
 
 - 🔊 Optional sound for the lid animation
-- 🛒 Real checkout connection
+- 🛒 Checkout connection
 - 🌙 Theme switch
 - 🖼️ Extra product scenes
 - ♿ Reduced-motion refinements beyond the current media query
@@ -211,7 +211,7 @@ Possible later improvements:
 
 ### Does the site need a backend?
 
-No. It is a static front-end page.
+No. It is a static front-end project.
 
 ### Why use a local server?
 
@@ -223,7 +223,7 @@ Yes. The hero stage uses Three.js. An older browser without WebGL will lose that
 
 ### Is this the same as Business Website?
 
-No. [Business Website](https://github.com/sadra-hatami/Business-Website) is a multi-page company template. This repository is a cinematic electronics store.
+No. [Business Website](https://github.com/sadra-hatami/Business-Website) is a general company template. This repository is a cinematic electronics store with motion and a 3D product stage.
 
 ---
 
@@ -277,5 +277,13 @@ If you like this interface, please consider starring the repository.
 <div align="center">
 
 ## Designed & developed with ❤️ for the developer community of Iran and the world
+
+<br>
+
+## 👨‍💻 **Sadra Hatami**
+
+### Developer • Software Engineer • Creator
+
+⭐ If you like this project, don't forget to star the repository!
 
 </div>
