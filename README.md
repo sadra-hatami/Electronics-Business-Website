@@ -22,8 +22,9 @@ A high-end Persian store website with **scroll-driven motion**, a **3D laptop th
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
 ![RTL](https://img.shields.io/badge/Direction-RTL%20Persian-success?style=for-the-badge)
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-0078D6?style=for-the-badge)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://sadra-hatami.github.io/Electronics-Business-Website/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://sadra-hatami.github.io/Electronics-Business-Website/)
+![GitHub](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)
 
 <br>
 
