@@ -278,12 +278,4 @@ If you like this interface, please consider starring the repository.
 
 ## Designed & developed with ❤️ for the developer community of Iran and the world
 
-<br>
-
-## 👨‍💻 **Sadra Hatami**
-
-### Developer • Software Engineer • Creator
-
-⭐ If you like this project, don't forget to star the repository!
-
 </div>
