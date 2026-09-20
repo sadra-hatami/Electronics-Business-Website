@@ -3,7 +3,7 @@
 # Electronics Business Website
 # 💻✨
 
-### A Cinematic Single-Page Electronics Store Experience
+### A Cinematic Electronics Store Experience
 
 A high-end Persian landing page with **scroll-driven motion**, a **3D laptop that opens as you scroll**, a **live product configurator**, and a polished interface built with HTML, CSS, GSAP, and Three.js.
 
