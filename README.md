@@ -1,7 +1,7 @@
 <div align="center">
 
 # Electronics Business Website
-# 💻✨
+# 💻✨💻
 
 ### A Cinematic Electronics Store Experience
 
