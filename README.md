@@ -15,16 +15,19 @@ A high-end Persian store website with **scroll-driven motion**, a **3D laptop th
 
 <br>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
-![RTL](https://img.shields.io/badge/Direction-RTL%20Persian-success?style=for-the-badge)
-![Responsive](https://img.shields.io/badge/Responsive-Yes-0078D6?style=for-the-badge)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://gsap.com/)
+[![ScrollTrigger](https://img.shields.io/badge/ScrollTrigger-Animation-88CE02?style=for-the-badge)](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![Vazirmatn](https://img.shields.io/badge/Font-Vazirmatn-111111?style=for-the-badge)](https://fonts.google.com/specimen/Vazirmatn)
+[![Persian](https://img.shields.io/badge/Language-Persian-success?style=for-the-badge)](https://en.wikipedia.org/wiki/Persian_language)
+[![RTL](https://img.shields.io/badge/Direction-RTL-1ABC9C?style=for-the-badge)](https://en.wikipedia.org/wiki/Right-to-left)
+[![Responsive](https://img.shields.io/badge/Responsive-Yes-0078D6?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/responsive_design_building_blocks)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://sadra-hatami.github.io/Electronics-Business-Website/)
-![GitHub](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/license/mit)
+[![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)](https://opensource.org/)
 
 <br>
 
